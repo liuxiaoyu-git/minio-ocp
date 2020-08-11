@@ -17,3 +17,13 @@ PVC:
 ```
 oc process -f minio-pvc.yaml | oc apply -f
 ```
+
+## using the aws cli
+
+Using the offical AWS CLI (why?) with the example:
+```
+export AWS_ACCESS_KEY_ID=DEVELOPER-ACCESS-KEY
+export AWS_SECRET_ACCESS_KEY=DEVELOPER-SECRET-KEY
+aws --endpoint-url https://<URL> s3 ls
+```
+
