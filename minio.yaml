@@ -49,10 +49,10 @@ objects:
           - server
           - /data
           env:
-          - name: MINIO_ACCESS_KEY
-            value: "${MINIO_ACCESS_KEY}"
-          - name: MINIO_SECRET_KEY
-            value: "${MINIO_SECRET_KEY}"
+          - name: MINIO_ROOT_USER
+            value: "${MINIO_ROOT_USER}"
+          - name: MINIO_ROOT_PASSWORD
+            value: "${MINIO_ROOT_PASSWORD}"
           image: 'minio/minio:latest'
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -134,17 +134,13 @@ objects:
           scheduled: true
 
 parameters:
-- description: The name of the OpenShift Service exposed for the Minio container.
-  displayName: Minio Service Name
+- description: The name of this Minio Instance.
+  displayName: Minio Instance Name
   name: MINIO_SERVICE_NAME
   value: minio
-- description: Name of the ImageStreamTag to be used for the Minio image.
-  displayName: Minio ImageStreamTag
-  name: MINIO_IMAGE_STREAM_TAG
-  value: minio:latest
-- description: MINIO Access Key
-  name: MINIO_ACCESS_KEY
-  value: "DEVELOPER-ACCESS-KEY"
-- description: MINIO Secret Key
-  name: MINIO_SECRET_KEY
-  value: "DEVELOPER-SECRET-KEY"
+- description: Minio root User Name
+  name: MINIO_ROOT_USER
+  value: "minio"
+- description: MINIO root user passwprd
+  name: MINIO_ROOT_PASSWORD
+  value: "minio123"
