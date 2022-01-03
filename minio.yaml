@@ -53,7 +53,7 @@ objects:
             value: "${MINIO_ACCESS_KEY}"
           - name: MINIO_SECRET_KEY
             value: "${MINIO_SECRET_KEY}"
-          image: 'minio:latest'
+          image: 'minio/minio:latest'
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
